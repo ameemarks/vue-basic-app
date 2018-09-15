@@ -27,6 +27,14 @@
         <li v-for="a in animals">{{ a.species }}</li>
     </ul>
     <p v-if="!animals.length">No animals!</p>
+    <button v-on:click="addParrot()">Add parrot</button><br/>
+    <input
+            type="text"
+            v-model="cokolwiek"
+            placeholder="type some animal"
+            v-on:keyup.enter="addCustomAnimal()"
+    >
+    <p>Your animal is: {{ cokolwiek }}</p>
 </div>
 
 
@@ -45,9 +53,22 @@
                 {
                     species: 'rabbit'
                 }
-            ]
+            ],
+            cokolwiek: ''
         },
         methods: {
+            addParrot() {
+                const parrot = {
+                    species: 'parrot'
+                };
+                this.animals.push(parrot)
+            },
+            addCustomAnimal(cokolwiek) {
+                let customAnimal = {
+                    species: cokolwiek
+                };
+                this.animals.push(customAnimal);
+            }
         }
     })
 </script>
