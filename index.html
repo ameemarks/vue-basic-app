@@ -19,14 +19,14 @@
 
 <h1>Vue.js</h1>
 
-<p>Hello World from VUE</p>
+<p>Hello World</p>
 
 <div id="app">
-    <h2>My awesome list</h2>
+    <h2>Animals list</h2>
     <ul>
         <li v-for="a in animals">{{ a.species }}</li>
     </ul>
-    <p v-if="!products.length">No products!</p>
+    <p v-if="!animals.length">No animals!</p>
 </div>
 
 
@@ -35,16 +35,23 @@
     const app = new Vue({
         el: '#app',
         data: {
-            animals: {
-                dog: {},
-                cat: {},
-                rabbit: {}
-            }
+            animals: [
+                {
+                    species: 'dog'
+                },
+                {
+                    species: 'cat'
+                },
+                {
+                    species: 'rabbit'
+                }
+            ]
         },
         methods: {
         }
     })
 </script>
+
 </body>
 
 </html>
